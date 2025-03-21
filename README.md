@@ -24,3 +24,5 @@ It retrieves movie data from an API and ensures a seamless user experience with 
 🔹 Retrofit  
 🔹 Material Design Components  
 
+This project has allowed me to strengthen my skills and gain practical experience. I'm excited to continue growing and take on even greater opportunities!🔥💡
+
