@@ -7,9 +7,6 @@ import retrofit2.Response
 
 class Repository(private val moviesApi: MoviesApiService) {
 
-    //private val moviesApi = RetrofitInstance.getInstance().create(MoviesApiService::class.java)
-
-
     suspend fun getPopularMovies(apiKey: String): Response<MoviesResponse> {
         return moviesApi.getPopularMovies(apiKey)
     }
