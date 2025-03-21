@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/fragment_splash">
+
+    <fragment
+        android:id="@+id/fragment_splash"
+        android:name="com.example.mymoviesapp.ui.splash.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash">
+        <action
+            android:id="@+id/action_splashFragment_to_LogInFragment"
+            app:destination="@id/fragment_log_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_log_in"
+        android:name="com.example.mymoviesapp.ui.login.LoginFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_log_in">
+        <action
+            android:id="@+id/action_logInFragment_to_SignUpFragment"
+            app:destination="@id/fragment_sign_up" />
+        <action
+            android:id="@+id/action_logInFragment_to_HomeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_sign_up"
+        android:name="com.example.mymoviesapp.ui.signup.SignUpFragmen"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up">
+        <action
+            android:id="@+id/action_SignUpFragment_to_LogInFragment"
+            app:destination="@id/fragment_log_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.mymoviesapp.ui.home.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.mymoviesapp.ui.search.SearchFragment"
+        android:label="fragment_search"
+        tools:layout="@layout/fragment_search">
+        <action
+            android:id="@+id/action_searchFragment_to_moviesDetailFragment"
+            app:destination="@id/moviesDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/saveFragment"
+        android:name="com.example.mymoviesapp.ui.save.SaveFragment"
+        android:label="fragment_save"
+        tools:layout="@layout/fragment_save" />
+    <fragment
+        android:id="@+id/dowloadsFragment"
+        android:name="com.example.mymoviesapp.ui.dowload.DowloadFragment"
+        android:label="fragment_dowload"
+        tools:layout="@layout/fragment_dowload" />
+    <fragment
+        android:id="@+id/meFragment"
+        android:name="com.example.mymoviesapp.ui.me.MeFragment"
+        android:label="fragment_me"
+        tools:layout="@layout/fragment_me">
+        <action
+            android:id="@+id/action_meFragment_to_logInFragment"
+            app:destination="@id/fragment_log_in" />
+    </fragment>
+    <fragment
+        android:id="@+id/moviesDetailFragment"
+        android:name="com.example.mymoviesapp.ui.detail.DetailFragment"
+        android:label="fragment_movies_detail"
+        tools:layout="@layout/fragment_detail">
+        <action
+            android:id="@+id/action_moviesDetailFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+        <argument
+            android:name="moviesTitle"
+            app:argType="string" />
+    </fragment>
+</navigation>
