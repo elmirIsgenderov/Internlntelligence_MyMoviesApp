@@ -26,9 +26,9 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
-        checkLogin()
         btnLogin()
         action()
+        checkLogin()
 
     }
 

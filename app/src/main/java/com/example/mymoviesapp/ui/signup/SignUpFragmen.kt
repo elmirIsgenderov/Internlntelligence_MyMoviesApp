@@ -20,22 +20,18 @@ class SignUpFragmen : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentSignUpBinding.inflate(inflater, container, false)
-
-
-        binding.txtLogIn.setOnClickListener {
-            findNavController().navigate(R.id.action_SignUpFragment_to_LogInFragment)
-        }
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         firebaseAuth = FirebaseAuth.getInstance()
-        btnLogin()
+        btnSignUp()
+        action()
 
     }
 
-    private fun btnLogin() {
+    private fun btnSignUp() {
 
         binding.btnSignUp.setOnClickListener {
 
@@ -55,6 +51,7 @@ class SignUpFragmen : Fragment() {
                             user.updateProfile(profileUpdates)
                                 .addOnCompleteListener { task ->
                                     if (task.isSuccessful) {
+                                        firebaseAuth.signOut()
                                         Toast.makeText(
                                             requireContext(),
                                             "Registration was successful",
@@ -74,5 +71,10 @@ class SignUpFragmen : Fragment() {
             }
         }
 
+    }
+    private fun action(){
+        binding.txtLogIn.setOnClickListener {
+            findNavController().navigate(R.id.action_SignUpFragment_to_LogInFragment)
+        }
     }
 }
