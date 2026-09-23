@@ -22,13 +22,6 @@ class HomeViewModel @Inject constructor(private val repository: Repository) : Vi
     private val _topRatedMovieResult = MutableLiveData<MoviesResponse?>()
     val topRatedMovieResult: LiveData<MoviesResponse?> = _topRatedMovieResult
 
- /* val topRatedMovieResult = MutableLiveData<MoviesResponse?>() -- Eger pramoy bele etseydik Fragment və Activity bu dəyişəni dəyişdirə bilərdi.
-    Buda, arxitektura üçün təhlükəlidir! View yalnız məlumatı göstərməli, onu dəyişməməlidir.
-    Bu yanaşma Encapsulation (Qablaşdırma) prinsipi ilə daha təhlükəsiz və strukturlaşdırılmış kod yazmağa kömək edir.
-
-    🔹 ViewModel məlumatı dəyişir.
-    🔹 View yalnız oxuyur, dəyişdirə bilmir.
-    🔹 Kod təmiz və asan idarə olunan olur 🚀*/
 
     private val _nowPlayingMoviesResult = MutableLiveData<MoviesResponse?>()
     val nowPlayingMoviesResult: LiveData<MoviesResponse?> = _nowPlayingMoviesResult
